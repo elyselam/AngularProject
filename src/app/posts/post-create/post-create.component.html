@@ -1,0 +1,10 @@
+<!--<textarea rows="10"[value]="newPost" #postInput></textarea>-->
+<!--<hr>-->
+
+<textarea matInput rows="10" [(ngModel)]="enteredValue"></textarea>
+
+
+
+
+<button (click)="onAddPost()">save post</button>
+<p>{{newPost}}</p>
