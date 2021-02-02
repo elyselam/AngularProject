@@ -9,7 +9,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatInputModule} from "@angular/material/input";
 
 
-import {MatCardModule} from "@angular/material/card";
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import { PostListComponent } from './post-list/post-list.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 
@@ -18,6 +22,7 @@ import {MatCardModule} from "@angular/material/card";
     AppComponent,
     PostCreateComponent,
     HeaderComponent,
+    PostListComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,9 +30,9 @@ import {MatCardModule} from "@angular/material/card";
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
-
-
-
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
