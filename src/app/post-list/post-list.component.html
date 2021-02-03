@@ -1,4 +1,7 @@
-<mat-accordion>
+<!--multi="true" to be able to expand all at a time
+only added to the DOM if these ngIf conditions are true-->
+
+<mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel *ngFor="let post of posts">
     <mat-expansion-panel-header>
       {{post.title}}
@@ -6,3 +9,4 @@
     <p>{{post.content}}</p>
   </mat-expansion-panel>
 </mat-accordion>
+<p *ngIf="posts.length <= 0"> no posts added yet!</p>
