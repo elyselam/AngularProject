@@ -1,9 +1,12 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li *ngFor="let hero of heroes">
+<!--class-binding: makes it easy to update CSS class. [class.some-css-class]="condition"
+[class.selected] binds to <li> when user clicks
+when current row is the same as selectedHero, add the CSS class-->
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+  <span class="badge"> {{hero.id}} </span> {{hero.name}}
   </li>
 </ul>
 
