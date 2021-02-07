@@ -15,6 +15,7 @@ export class HeroDetailComponent implements OnInit {
 
 
   //hero property must be Input property bc external HeroesComp html will bind to it
-  @Input() hero: Hero;
+  @Input()
+  hero: Hero;
 
 }

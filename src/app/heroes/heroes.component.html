@@ -7,5 +7,10 @@
   </li>
 </ul>
 
-<!--[Input property] from another component -->
+<!--[Input property]
+1 way binding from selectedHero property of heroes-comp
+to 'hero' property of target element, which maps to the hero property of hero-detail-comp
+when user clicks, the selectedHero changes, property binding updates hero
+then hero-detail displays new hero
+-->
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
