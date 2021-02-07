@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero';
 import {HEROES} from '../mock-heroes';
 import {HeroService} from '../hero.service';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -15,6 +16,7 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
+    this.messageService.add(`HeroesComp: selected hero id=${hero.id}`);
   }
   //better to call getHeroes() inside ngOnInit than constructor
   // bc constructor shouldn't DO anything, only simple initialization ex. wiring params to properties
@@ -22,16 +24,16 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService, private messageService: MessageService) {
   }
-//subscribe() passes emitted array back to the callback, which sets the heroes property
+
+  //subscribe() passes emitted array back to the callback, which sets the heroes property
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe((heroes) => {
-        console.log(heroes);
+        // console.log(heroes);
         this.heroes = heroes;
       });
-
   }
 
 }

@@ -1,15 +1,16 @@
 <h2>My Heroes</h2>
+
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)" >
 <!--class-binding: makes it easy to update CSS class. [class.some-css-class]="condition"
 [class.selected] binds to <li> when user clicks
 when current row is the same as selectedHero, add the CSS class-->
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
-  <span class="badge"> {{hero.id}} </span> {{hero.name}}
+
+  <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-
 <!--[Input property]
 1 way binding from selectedHero property of heroes-comp
 to 'hero' property of target element, which maps to the hero property of hero-detail-comp
