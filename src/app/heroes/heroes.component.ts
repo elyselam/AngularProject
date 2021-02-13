@@ -19,7 +19,7 @@ export class HeroesComponent implements OnInit {
     this.messageService.add(`HeroesComp: selected hero id=${hero.id}`);
   }
   //better to call getHeroes() inside ngOnInit than constructor
-  // bc constructor shouldn't DO anything, only simple initialization ex. wiring params to properties
+  // bc constructor shouldn't Do anything, only simple initialization ex. wiring params to properties
   ngOnInit(): void {
     this.getHeroes();
   }
@@ -31,7 +31,6 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe((heroes) => {
-        // console.log(heroes);
         this.heroes = heroes;
       });
   }
